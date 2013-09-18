@@ -255,7 +255,7 @@ function! s:get_session_path(filename)
     let filename .= '.vim'
   endif
 
-  if filename !~ '^\%(/\|\a\+:/\)'
+  if filename !~ '^\%(/\|\a\+:/\)' && filename !~ '^\w:\\'
     " Relative path.
     let filename = g:unite_source_session_path . '/' . filename
   endif
